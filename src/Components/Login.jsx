@@ -1,36 +1,50 @@
 import { signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../firebase";
+
+import {
+  auth,
+  provider
+} from "../firebase";
 
 function Login({ setUser }) {
-
-  async function handleLogin() {
-    try {
-      const result = await signInWithPopup(auth, provider);
-      setUser(result.user);
-    } catch (error) {
-      console.log(error);
-    }
+async function handleGoogleLogin() {
+  try {
+    const result = await signInWithPopup(auth, provider);
+    setUser(result.user);
+  } catch (error) {
+    console.log("FULL ERROR:", error.code, error.message);
+    alert(error.code);
   }
+}
 
   return (
+
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
 
-      <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+      <div className="bg-white p-10 rounded-3xl shadow-xl text-center">
 
-        <h1 className="text-3xl font-bold mb-4">
+        <h1 className="text-4xl font-bold mb-6">
           Portfolio Platform
         </h1>
 
         <button
-          onClick={handleLogin}
-          className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600"
+          onClick={handleGoogleLogin}
+          className="
+            bg-blue-500
+            text-white
+            px-6
+            py-3
+            rounded-xl
+            hover:bg-blue-600
+            transition
+          "
         >
-          Sign in with Google
+          Continue with Google
         </button>
 
       </div>
 
     </div>
+
   );
 }
 
