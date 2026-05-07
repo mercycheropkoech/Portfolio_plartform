@@ -1,34 +1,62 @@
 import { useState } from 'react';
+
 import Header from './Components/Header';
 import SearchBar from './Components/SearchBar';
 import ProjectForm from './Components/ProjectForm';
 import ProjectList from './Components/ProjectList';
 
 function App() {
+
   const [projects, setProjects] = useState([
-    { title: "Portfolio Platform", description: "Personal portfolio" }
+    {
+      id: 1,
+      title: "Portfolio Platform",
+      description: "Modern React portfolio application"
+    },
+    {
+      id: 2,
+      title: "E-Commerce Website",
+      description: "Online shopping web application"
+    }
   ]);
 
   const [search, setSearch] = useState("");
 
   function addProject(project) {
-    setProjects([...projects, project]);
+    setProjects([
+      ...projects,
+      {
+        ...project,
+        id: Date.now()
+      }
+    ]);
   }
 
-  const filteredProjects = projects.filter((p) =>
-    p.title.toLowerCase().includes(search.toLowerCase())
+  function deleteProject(id) {
+    setProjects(projects.filter((project) => project.id !== id));
+  }
+
+  const filteredProjects = projects.filter((project) =>
+    project.title.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 to-slate-300">
 
-      <Header />
+      <div className="max-w-6xl mx-auto p-6">
 
-      <SearchBar setSearch={setSearch} />
+        <Header />
 
-      <ProjectForm addProject={addProject} />
+        <SearchBar setSearch={setSearch} />
 
-      <ProjectList projects={filteredProjects} />
+        <ProjectForm addProject={addProject} />
+
+        <ProjectList
+          projects={filteredProjects}
+          deleteProject={deleteProject}
+        />
+
+      </div>
 
     </div>
   );

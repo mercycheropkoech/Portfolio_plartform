@@ -1,24 +1,54 @@
-function ProjectCard({ project }) {
+function ProjectCard({ project, deleteProject }) {
+
   return (
-    <div className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition duration-200">
+    <div
+      className="
+        bg-white
+        rounded-3xl
+        shadow-xl
+        p-6
+        hover:scale-105
+        transition
+      "
+    >
 
-      <h3 className="text-xl font-bold text-gray-800">
+      <div className="mb-4">
+
+        <div
+          className="
+            h-40
+            rounded-2xl
+            bg-gradient-to-r
+            from-blue-400
+            to-purple-500
+          "
+        ></div>
+
+      </div>
+
+      <h2 className="text-2xl font-bold text-gray-800">
         {project.title}
-      </h3>
+      </h2>
 
-      <p className="text-gray-600 mt-2">
+      <p className="text-gray-600 mt-3">
         {project.description}
       </p>
 
-      <div className="mt-4 flex gap-2">
-        <button className="text-sm bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
-          View
-        </button>
-
-        <button className="text-sm bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
-          Delete
-        </button>
-      </div>
+      <button
+        onClick={() => deleteProject(project.id)}
+        className="
+          mt-5
+          bg-red-500
+          text-white
+          px-4
+          py-2
+          rounded-xl
+          hover:bg-red-600
+          transition
+        "
+      >
+        Delete
+      </button>
 
     </div>
   );
