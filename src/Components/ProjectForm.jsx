@@ -1,38 +1,24 @@
-import { useState } from "react";
-
 function ProjectForm({ addProject }) {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    if (!title || !description) return;
-
-    addProject({ title, description });
-
-    setTitle("");
-    setDescription("");
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <input
-        className="input"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Project Title"
-      />
+    <div className="flex justify-center mb-8">
+      <div className="bg-white p-5 rounded-xl shadow-md w-full max-w-md">
 
-      <input
-        className="input"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        placeholder="Project Description"
-      />
+        <input
+          placeholder="Project Title"
+          className="w-full p-2 border rounded mb-2"
+        />
 
-      <button className="btn">Add Project</button>
-    </form>
+        <input
+          placeholder="Project Description"
+          className="w-full p-2 border rounded mb-3"
+        />
+
+        <button className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">
+          Add Project
+        </button>
+
+      </div>
+    </div>
   );
 }
 

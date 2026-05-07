@@ -1,10 +1,10 @@
-import ProjectCard from "./ProjectCard";
+import ProjectCard from './ProjectCard';
 
 function ProjectList({ projects }) {
   return (
-    <div className="grid">
-      {projects.map((project, index) => (
-        <ProjectCard key={index} project={project} />
+    <div className="grid md:grid-cols-3 gap-5">
+      {projects.map((project, i) => (
+        <ProjectCard key={i} project={project} />
       ))}
     </div>
   );
