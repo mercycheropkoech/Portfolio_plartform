@@ -1,18 +1,55 @@
-# React + Vite
+# Creative Portfolio Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Single Page Application (SPA) built with React, Vite, TailwindCSS, and Firebase.  
+This application allows users to showcase projects, search through projects dynamically.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive modern UI
+- Add projects dynamically
+- Search/filter projects
+- Firebase Hosting deployment
+- React component-based architecture
+- TailwindCSS styling
+- SPA routing support
 
-## React Compiler
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Technologies Used
 
-Note: This will impact Vite dev & build performances.
+- React
+- Vite
+- TailwindCSS
+- Firebase Authentication
+- Firebase Hosting
+- JavaScript 
+- CSS3
+- HTML5
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+src/
+│
+├── Components/
+│ ├── Header.jsx
+│ ├── SearchBar.jsx
+│ ├── ProjectForm.jsx
+│ ├── ProjectCard.jsx
+│ └── ProjectList.jsx
+│
+├── firebase.js
+├── App.jsx
+├── main.jsx
+└── index.css
+
+
+## Installation
+
+Clone the repository:
+
+##Author
+Mercy Cherop 
+
+here's the Web App link :
+https://portfolio-platform-d5fc5.web.app/
+
